@@ -1,10 +1,10 @@
 FROM httpd
 
-RUN apt-get update && \
-    apt-get install -y \
-    iputils-ping
-RUN apt-get install iproute2 -y
-RUN apt-get install curl -y
-RUN apt-get install telnet -y
-RUN apt-get install dnsutils -y
-RUN apt-get install vim -y
+RUN apt-get update
+RUN apt-get install -y iputils-ping
+RUN apt-get install -y inetutils-traceroute
+RUN apt-get install -y iproute2
+RUN apt-get install -y curl
+RUN apt-get install -y telnet
+RUN apt-get install -y dnsutils
+RUN apt-get install -y vim
