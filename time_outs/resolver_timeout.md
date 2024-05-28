@@ -1,0 +1,1 @@
+* Resolver timeout is a timeout to figure out the DNS resolution
