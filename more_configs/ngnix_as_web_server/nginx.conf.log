@@ -1,0 +1,27 @@
+# HTTP layer (layer 7)
+# can create as much servers as we want
+http {
+    server {
+        listen 8090;
+        root /etc/nginx/sites-for-nginx;
+
+        location /test-sites {
+            root /etc/nginx/;
+        }
+
+        location ~ .txt$ {
+		    return 404;
+        }
+
+    }
+
+    server {
+        listen 9999;
+
+        location / {
+            proxy_pass http://localhost:8090;
+        }
+    }
+}
+
+events { }
